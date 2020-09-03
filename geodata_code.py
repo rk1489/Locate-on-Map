@@ -4,9 +4,9 @@ import json
 import codecs
 import ssl
 
-#Geocoding API URL and Key
-api_serviceurl = "http://py4e-data.dr-chuck.net/json?"        
-api_key = 42                                                  
+#Google Maps Geocoding API URL and Key
+api_serviceurl = "https://maps.googleapis.com/maps/api/geocode/json?"        
+api_key = "AIzaSyCueqPY9MNML6sdXn-ZPOdkdMKoxvqqNQg"                                                 
 
 #Ignore SSL certificate errors
 ctx = ssl.create_default_context()

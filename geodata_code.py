@@ -56,10 +56,16 @@ for location_name in list_of_locations:
     #Generate the url using urlencode
     url = api_serviceurl + urllib.parse.urlencode(parameters)
 
-    print('Retrieving', url)
+    #Check for Internet connection and retrieve the geodata
+    try:
+        fhand = urllib.request.urlopen(url, context=ctx)
+    except:
+        print("Device not connected to Internet.\n")
+        break
 
-    #Retrieve and decode the geodata
-    fhand = urllib.request.urlopen(url, context=ctx)
+    print('Retrieving', url)
+    
+    #Read and decode the geodata
     fhand = fhand.read()
     geodata = fhand.decode()
     

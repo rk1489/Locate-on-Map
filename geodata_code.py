@@ -17,10 +17,10 @@ ctx.verify_mode = ssl.CERT_NONE
 conn = sqlite3.connect('geodata_index.sqlite')
 cur = conn.cursor()
 
-#Delete any existing table 
+#Delete any existing table with name 'Locations'
 cur.execute('''DROP TABLE IF EXISTS Locations''')
 
-#Create a new table
+#Create a new table with name 'Locations'
 cur.execute('''CREATE TABLE Locations (address TEXT, geodata TEXT)''')
 
 

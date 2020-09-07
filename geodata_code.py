@@ -160,7 +160,7 @@ def write_on_js():
 
 
 #----------Main Function----------
-#Call the 'input_values' function to take input
+#Call the 'input_values()' function to take input
 list_of_locations=input_values()
 
 #Retrieve the geodata for each location in the list and insert into the table
@@ -173,7 +173,7 @@ for location_name in list_of_locations:
     else:
         insert_data(address,geodata)
 
-#Call the 'write_on_js' function
+#Call the 'write_on_js()' function
 count=write_on_js()
  
 #Close the sqlite database

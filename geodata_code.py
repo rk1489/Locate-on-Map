@@ -142,7 +142,7 @@ def write_on_js():
         location = js['results'][0]['formatted_address']
         location = location.replace("'", "")
         try :
-            print(location_name,location, latitude, longitude)
+            print(location_name, location, latitude, longitude)
             print('')
             count = count + 1
             if count > 1 : fhand.write(",\n")

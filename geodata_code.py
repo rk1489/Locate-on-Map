@@ -124,6 +124,7 @@ def write_on_js():
 
     #Write the geodata to the Javascript file
     for row in cur :
+        location_name = row[0].decode() + ','
         data = str(row[1].decode())
 
         #Check for Unicode errors
@@ -141,11 +142,11 @@ def write_on_js():
         location = js['results'][0]['formatted_address']
         location = location.replace("'", "")
         try :
-            print(location, latitude, longitude)
+            print(location_name,location, latitude, longitude)
             print('')
             count = count + 1
             if count > 1 : fhand.write(",\n")
-            output = "["+str(latitude)+","+str(longitude)+", '"+location+"']"
+            output = "["+str(latitude)+","+str(longitude)+", '"+location_name+" "+location+"']"
             fhand.write(output)
         except:
             continue
